@@ -10,23 +10,23 @@ pip3 -m venv venv
 
 source venv/bin/activate
 
-## Installing fast api
+#### Installing fast api
 
 - pips install "fastapi[all]" 
 
 Above command will install libraries for fastapi
 
-## Start the server
+#### Start the server
 
 uvicorn main:app --reload
 
 - --reload will ensure the server is reloaded whenever you make changes on your code
 
-## Path Operation to be aware of
+#### Path Operation to be aware of
 
 - CRUD [ Create=Post, Read=Get, Update=Put, Delete=Delete]
 
-## Using pydantic for data validation
+#### Using pydantic for data validation
 
 Pydantic is the most widely used data validation library for Python.
 
@@ -34,17 +34,17 @@ Pydantic is the most widely used data validation library for Python.
 
 - from pydantic import BaseModel
 
-## Using HTTP Status Code
+#### Using HTTP Status Code
 
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
-## Fast API built in support
+#### Fast API built in support
 
 - start the server
 
 - hit http://localhost:8000/docs
 
-## Adding src folder
+#### Adding src folder
 
 -  create a folder e.g app or src folder
 
@@ -56,14 +56,14 @@ Pydantic is the most widely used data validation library for Python.
 
 - uvicorn app.main:app --reload
 
-## Working with Database
+#### Working with Database
 
 - Datbase is a collection of organzed data can be easily accessed and managed
 
-### Note:
+#### Note:
 You don't work or interact with database directly, instead we make use of software refferred to as a Database Management System (DBMS)
 
-## Relational DBMS
+#### Relational DBMS
 
 - MYSQL
 
@@ -73,13 +73,13 @@ You don't work or interact with database directly, instead we make use of softwa
 
 - SQL SERVER
 
-## N0SQL DBMS
+#### N0SQL DBMS
 
 - MongoDB
 
 - DynamoDB
 
-### Installing Postgres on Mac
+#### Installing Postgres on Mac
 
 - https://www.postgresql.org/
 
@@ -104,11 +104,11 @@ You don't work or interact with database directly, instead we make use of softwa
 
 - Database Superuser =  postgres
 
-### Working DAtabase Tables
+#### Working DAtabase Tables
 
 - A table represent a subject or event in an application
 
-### Columns Vs Rows
+#### Columns Vs Rows
 
 - A table is made up of columns and rows
 
@@ -116,7 +116,7 @@ You don't work or interact with database directly, instead we make use of softwa
 
 - Each row represent a different entry in the table
 
-### Postgres DataTypes
+##### Postgres DataTypes
 
 - Numeric = int, decimal, precision
 
@@ -126,7 +126,7 @@ You don't work or interact with database directly, instead we make use of softwa
 
 - sequence = array
 
-### Primary Key
+#### Primary Key
 
 - A column or group of columns that uniquely identifies each row in a table
 
@@ -137,19 +137,19 @@ You don't work or interact with database directly, instead we make use of softwa
         email column will always be uniqque no duplicate
         Phone Number will always be unique, two users cannot have the same email and phone number
 
-### Unique Constraints
+#### Unique Constraints
 
 - A unique constraint can be applied to any column to make sure every record has a unique value for that column
 
 - Example: maybe if your email column is primary key, and you want to make sure phone number column has no duplicate, unique constraint will help to fix it.
 
-### Null Constraint
+#### Null Constraint
 
 - by default, when adding a new entry to a database, any colunm can be left blank. When a column is left blank, it has a null value
 
 - If you need a colum to be properly filled in to create a new record, a NOT NULL constraint can be added to the column to ensure that the column is never left blank
 
-### COMMON SQL OPERATOR COMMAND
+#### COMMON SQL OPERATOR COMMAND
 
 - Create Table
 
@@ -171,7 +171,7 @@ You don't work or interact with database directly, instead we make use of softwa
 
     SELECT name, id, price FROM products;
 
-## FILTERING
+#### FILTERING
 
     SELECT * FROM products WHERE inventory = 0;
     SELECT * FROM products WHERE id = 1;
@@ -183,10 +183,14 @@ You don't work or interact with database directly, instead we make use of softwa
     SELECT * FROM products ORDER BY price ASC;
     SELECT * FROM products ORDER BY price DESC;
 
-## ADDING AN ENTRY
+#### ADDING AN ENTRY
 
     INSERT INTO products (name, price, inventory) VALUES ('benz', 3000, 201);
 
-## ADDING ENTRY and Returning Inserted values
+#### ADDING ENTRY and Returning Inserted values
 
     INSERT INTO products (name, price, inventory) VALUES ('benz', 3000, 201) returning *;
+
+#### UPDATE ENTRY
+
+    UPDATE products SET name = 'flower', price = 333 WHERE id = 25
