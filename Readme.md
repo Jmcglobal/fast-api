@@ -148,3 +148,45 @@ You don't work or interact with database directly, instead we make use of softwa
 - by default, when adding a new entry to a database, any colunm can be left blank. When a column is left blank, it has a null value
 
 - If you need a colum to be properly filled in to create a new record, a NOT NULL constraint can be added to the column to ensure that the column is never left blank
+
+### COMMON SQL OPERATOR COMMAND
+
+- Create Table
+
+    CREATE DATABASE student;
+
+- Select all table columes and rows oder by ascending order
+
+    SELECT * FROM products ORDER by id ASC;
+
+- Select every entry on the products table
+
+    SELECT * FROM products;
+
+- Select name column
+
+    SELECT name FROM products;
+
+- Select multiple columns
+
+    SELECT name, id, price FROM products;
+
+## FILTERING
+
+    SELECT * FROM products WHERE inventory = 0;
+    SELECT * FROM products WHERE id = 1;
+    SELECT * FROM products WHERE name = 'TV';
+    SELECT * FROM products WHERE price > 200 AND price < 1000;
+    SELECT * FROM products WHERE price > 100 OR price < 200;
+    SELECT * FROM products WHERE id IN (1,2,6);
+    SELECT * FROM products WHERE name LIKE 'TV%';
+    SELECT * FROM products ORDER BY price ASC;
+    SELECT * FROM products ORDER BY price DESC;
+
+## ADDING AN ENTRY
+
+    INSERT INTO products (name, price, inventory) VALUES ('benz', 3000, 201);
+
+## ADDING ENTRY and Returning Inserted values
+
+    INSERT INTO products (name, price, inventory) VALUES ('benz', 3000, 201) returning *;
