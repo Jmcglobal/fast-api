@@ -4,6 +4,12 @@
 
 - https://fastapi.tiangolo.com/#requirements
 
+Create Virtual Environment
+
+pip3 -m venv venv
+
+source venv/bin/activate
+
 ## Installing fast api
 
 - pips install "fastapi[all]" 
