@@ -103,3 +103,48 @@ You don't work or interact with database directly, instead we make use of softwa
 - Default port 5432
 
 - Database Superuser =  postgres
+
+### Working DAtabase Tables
+
+- A table represent a subject or event in an application
+
+### Columns Vs Rows
+
+- A table is made up of columns and rows
+
+- Each Column represents a different attribute
+
+- Each row represent a different entry in the table
+
+### Postgres DataTypes
+
+- Numeric = int, decimal, precision
+
+- Text = Varchar, text
+
+- bool = boolean
+
+- sequence = array
+
+### Primary Key
+
+- A column or group of columns that uniquely identifies each row in a table
+
+- Table can have one and only one primary key
+
+- It is up to you to decide to decide which column to use as primary key, for example "email" and "Phone Number"
+
+        email column will always be uniqque no duplicate
+        Phone Number will always be unique, two users cannot have the same email and phone number
+
+### Unique Constraints
+
+- A unique constraint can be applied to any column to make sure every record has a unique value for that column
+
+- Example: maybe if your email column is primary key, and you want to make sure phone number column has no duplicate, unique constraint will help to fix it.
+
+### Null Constraint
+
+- by default, when adding a new entry to a database, any colunm can be left blank. When a column is left blank, it has a null value
+
+- If you need a colum to be properly filled in to create a new record, a NOT NULL constraint can be added to the column to ensure that the column is never left blank
