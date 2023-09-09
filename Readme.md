@@ -194,3 +194,14 @@ You don't work or interact with database directly, instead we make use of softwa
 #### UPDATE ENTRY
 
     UPDATE products SET name = 'flower', price = 333 WHERE id = 25
+
+#### CREATE DATABASE FOR POSTS And Connecting to Python
+
+- https://www.psycopg.org/docs/
+
+#### Installing  psycopg2-binary
+
+- pip3 install psycopg2-binary
+
+- import psycopg2
+

@@ -4,6 +4,9 @@ from pydantic import BaseModel
 from typing import Optional
 from random import randrange
 from fastapi import Response, status, HTTPException
+import psycopg2
+from psycopg2.extras import RealDictCursor
+import time
 
 
 app = FastAPI()
@@ -13,6 +16,17 @@ class Post(BaseModel):
     content: str
     published: bool = True
     rating: Optional[int] = None
+while True:
+    try:
+        conn = psycopg2.connect(host='localhost', database='fastapi', port=5432,
+        user='postgres', password='admin', cursor_factory=RealDictCursor)
+        cursor = conn.cursor()
+        print("Database connection was successfull")
+        break
+    except Exception as error:
+        print("Connecting to database failed")
+        print("Error: ", error)
+        time.sleep(4)
 
 # Hard coding post in a variable "my_posts" if their no database to save all post
 my_posts = [{"tittle": "tittle of post 1", "content": "content of post 1", "rating": 6, "id": 1}, {"tittle":"Favourite foods", "content": "i like swallow", "id": 2}]
