@@ -79,3 +79,27 @@ You don't work or interact with database directly, instead we make use of softwa
 
 - DynamoDB
 
+### Installing Postgres on Mac
+
+- https://www.postgresql.org/
+
+- click on download
+
+- select macOS
+
+- Follow installation guide on the platform
+
+- Installing with EDB 
+
+- The following package will be installed
+
+-       PostgreSQL Server
+-       pgAdmin
+-       Stack Builder
+-       Command Line Tools
+
+- Set password "admin"
+
+- Default port 5432
+
+- Database Superuser =  postgres
