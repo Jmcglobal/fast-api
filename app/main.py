@@ -14,6 +14,7 @@ class Post(BaseModel):
     published: bool = True
     rating: Optional[int] = None
 
+# Hard coding post in a variable "my_posts" if their no database to save all post
 my_posts = [{"tittle": "tittle of post 1", "content": "content of post 1", "rating": 6, "id": 1}, {"tittle":"Favourite foods", "content": "i like swallow", "id": 2}]
 
 ## Find Id
@@ -86,3 +87,17 @@ def delete_post(id: int):
 
     my_posts.pop(index)
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+## Update a post
+
+@app.put("/posts/{id}")
+def update_post(id: int, post: Post):
+
+    index = find_index_post(id)
+    if index == None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"post with id: {id} not exist")
+    post_dict = post.dict()
+    post_dict["id"] = id
+    my_posts[index] = post_dict
+    
+    return {"message": post_dict}
